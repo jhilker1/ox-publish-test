@@ -1,0 +1,26 @@
+
+@font-face {
+	font-family: 'Iosevka Mono Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('iosevka-mono/iosevka-mono-regular.woff2') format('woff2')
+}
+
+@font-face {
+	font-family: 'Iosevka Mono Web Oblique';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	src: url('iosevka-mono/iosevka-mono-oblique.woff2') format('woff2'),
+}
+
+@font-face {
+	font-family: 'Iosevka Mono Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('iosevka-mono/iosevka-mono-italic.woff2') format('woff2'), 
+}

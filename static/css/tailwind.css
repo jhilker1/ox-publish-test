@@ -1,0 +1,16 @@
+@import url("/fonts/iosevka-sans.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    
+    body {
+     @apply min-h-screen antialiased bg-gray-100 dark:bg-gray-900;
+    }
+    
+    .navlink {
+        @apply block h-full p-3 2xl:p-4 transition duration-100 hover:bg-gray-400 dark:hover:bg-navy-600;
+    }
+}

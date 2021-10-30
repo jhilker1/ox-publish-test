@@ -1,0 +1,5 @@
+public/
+node_modules
+org-roam.db
+.emacs.d
+static/css/style.css

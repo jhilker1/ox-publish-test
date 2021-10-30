@@ -1,0 +1,5 @@
+#+title: Home
+#+date: <2021-10-30 Sat>
+#+draft: false
+
+Hello, and welcome to my personal notebook. This notebook is being built with TailwindCSS Ox-publish, and Org-roam.
