@@ -13,4 +13,8 @@
     .navlink {
         @apply block h-full p-3 2xl:p-4 transition duration-100 hover:bg-gray-400 dark:hover:bg-navy-600;
     }
+
+    .navlink-active {
+        @apply border-b-2 border-blue-400;
+    }
 }

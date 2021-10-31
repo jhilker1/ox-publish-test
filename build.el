@@ -62,11 +62,20 @@
     `(body
       (div (@ (class "grid h-screen grid-areas-mobile grid-rows-layout lg:grid-areas-desktop grid-cols-layout"))
            ,(jh:site-header info)
-           (main (@ (class "px-3 pt-3 overflow-y-scroll grid-in-main !max-w-none org-sm 2xl:org-lg org-royal scrollbar-thin dark:org-dark"))
-                 contents
-                 ))))))
-           
-           
+           ,(jh:fixed-sidebar)
+           (main (@ (class "px-3 pt-3 overflow-y-scroll grid-in-main !max-w-none markdown-sm 2xl:markdown-lg markdown-royal scrollbar-thin dark:markdown-dark scroll-smooth motion-reduce:scroll-auto")) ,contents)
+           )))))
+                 
+
+
+        
+(defun jh:fixed-sidebar ()
+"Creates Sidebar"
+(concat 
+ (sxml-to-xml 
+  `(aside (@ (class "flex-col items-center hidden bg-blueGray-300 dark:bg-blueGray-700 dark:text-gray-100 grid-in-sidebar lg:flex"))
+          (p (@ (class "p-2 font-semibold uppercase")) ,jh:site-title)
+          (div (@ (class "mt-3 overflow-hidden rounded-full h-44 w-44 bg-royal-600")))))))
 
 (org-export-define-derived-backend 'jh-html 'slimhtml
    :translate-alist '((template . jh:org-html-template)))
@@ -91,12 +100,18 @@ Return output file name."
           :with-author t
           :with-toc nil
           :section-numbers nil)
+        (list "org-assets"
+              :recursive t
+              :base-directory "./org/"
+              :publishing-function 'org-publish-attachment
+              :publishing-directory "./public/"
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|woff\\|woff2\\|svg")
+
         (list "site-assets"
               :recursive t
               :base-directory "./static/"
               :publishing-function 'org-publish-attachment
               :publishing-directory "./public/"
-              :ignore-regexps '("tailwind.css")
-              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|woff\\|woff2")))
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|woff\\|woff2\\|svg")))
 
 (org-publish-all t)

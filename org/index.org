@@ -1,5 +1,8 @@
 #+title: Home
 #+date: <2021-10-30 Sat>
 #+draft: false
+#+property: export_file_name index/index.html
 
-Hello, and welcome to my personal notebook. This notebook is being built with TailwindCSS Ox-publish, and Org-roam.
+Hello, and welcome to my personal notebook. This notebook is being built with TailwindCSS, Ox-publish, and Org-roam.
+
+
