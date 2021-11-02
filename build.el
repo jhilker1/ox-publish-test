@@ -32,7 +32,7 @@
    `(head ()
           (meta (@ (name "viewport")
                    (content "width=device-width, initial-scale=1, shrink-to-fit=no")))
-         (title ,(concat (org-export-data (plist-get info :title) info) " - " jh:site-title))
+         (title ,(concat (org-export-data (plist-get info :title) info) " | " jh:site-title))
          (link (@ (href "/css/style.css")
                   (rel "stylesheet")))
          (script (@ (src "https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"))
